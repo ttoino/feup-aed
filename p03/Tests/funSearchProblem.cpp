@@ -85,8 +85,51 @@ int FunSearchProblem::smallestMissingValue(const vector<int> &values)
     return s;
 }
 
-// TODO: d)
+// d)
+/**
+ * Finds the distribution of books by students which has the minimum amount 
+ * of pages per student. Returns -1 if no distribution is possible, the max 
+ * amount of pages each student has to read otherwise.
+ * 
+ * @param values How many pages each book has.
+ * @param numSt How many students.
+ */
 int FunSearchProblem::minPages(const vector<int> &values, int numSt)
 {
-    return 0;
+    if (values.size() < numSt)
+        return -1;
+
+    int low = 0, high = 0;
+
+    for (int value : values)
+    {
+        high += value;
+        if (value > low)
+            low = value;
+    }
+
+    while (low < high)
+    {
+        int mid = (high + low) / 2;
+
+        int students = 1;
+        int s = 0;
+
+        for (int value : values)
+        {
+            s += value;
+            if (s > mid)
+            {
+                s = value;
+                students++;
+            }
+        }
+
+        if (students <= numSt)
+            high = mid;
+        else
+            low = mid + 1;
+    }
+
+    return low;
 }
