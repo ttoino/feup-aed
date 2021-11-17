@@ -1,11 +1,10 @@
-#include <gtest/gtest.h>
-#include <gmock/gmock.h>
 #include "funSearchProblem.h"
+#include <gmock/gmock.h>
+#include <gtest/gtest.h>
 
 using testing::Eq;
 
-TEST(test, facingsun)
-{
+TEST(test, facingsun) {
     auto f = FunSearchProblem::facingSun;
 
     vector<int> v{4, 2, 5, 4, 6};
@@ -18,8 +17,7 @@ TEST(test, facingsun)
     ASSERT_EQ(f(v), 1);
 }
 
-TEST(test, squareR)
-{
+TEST(test, squareR) {
     auto f = FunSearchProblem::squareR;
 
     ASSERT_EQ(f(25), 5);
@@ -30,8 +28,7 @@ TEST(test, squareR)
     ASSERT_EQ(f(40), 6);
 }
 
-TEST(test, missingvalue)
-{
+TEST(test, missingvalue) {
     auto f = FunSearchProblem::smallestMissingValue;
 
     vector<int> v{};
@@ -56,8 +53,7 @@ TEST(test, missingvalue)
     ASSERT_EQ(f(v), 5);
 }
 
-TEST(test, minPages)
-{
+TEST(test, minPages) {
     auto f = FunSearchProblem::minPages;
 
     vector<int> v{1, 2, 3, 4, 5, 6, 7};

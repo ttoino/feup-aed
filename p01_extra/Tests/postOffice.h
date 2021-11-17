@@ -5,8 +5,7 @@
 #include "postman.h"
 #include <vector>
 
-class PostOffice
-{
+class PostOffice {
     vector<Mail *> mailToSend;
     vector<Mail *> mailToDeliver;
     vector<Postman> postmen;
@@ -27,8 +26,7 @@ public:
 };
 
 // TODO
-class NoPostmanException
-{
+class NoPostmanException {
 private:
     const string name;
 

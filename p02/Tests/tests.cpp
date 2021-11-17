@@ -1,31 +1,28 @@
-#include <gtest/gtest.h>
 #include <gmock/gmock.h>
+#include <gtest/gtest.h>
 
 #include <algorithm>
 #include <random>
 
 #include "cycle.h"
-#include "my_vector.h"
 #include "fibonacci.h"
+#include "my_vector.h"
 
 size_t sizes[]{1000, 10000, 50000, 100000, 200000, 500000, 1000000};
 size_t times = 5;
-unsigned n1[]{1, 2, 5, 10, 15, 20, 25, 50, 100, 200, 500, 1000, 2000, 5000, 10000};
+unsigned n1[]{1,   2,   5,   10,   15,   20,   25,   50,
+              100, 200, 500, 1000, 2000, 5000, 10000};
 unsigned n2[]{1, 2, 5, 8, 10, 12, 15, 18, 20, 25, 30, 35, 40, 45, 50};
 
 random_device rnd_device;
 mt19937 mersenne_engine{rnd_device()}; // Generates random integers
 uniform_int_distribution<int> dist{1, 10000};
 
-int gen()
-{
-    return dist(mersenne_engine);
-}
+int gen() { return dist(mersenne_engine); }
 
 using testing::Eq;
 
-TEST(test_1, max)
-{
+TEST(test_1, max) {
     MyVector<int> v;
 
     EXPECT_THROW(v.max(), EmptyVector);
@@ -66,8 +63,7 @@ TEST(test_1, max)
     // }
 }
 
-TEST(test_1, hasDuplicates)
-{
+TEST(test_1, hasDuplicates) {
     MyVector<int> v;
 
     v.push_back(4);
@@ -103,8 +99,7 @@ TEST(test_1, hasDuplicates)
     // }
 }
 
-TEST(test_1, removeDuplicates)
-{
+TEST(test_1, removeDuplicates) {
     MyVector<int> v;
 
     v.push_back(4);
@@ -165,8 +160,7 @@ TEST(test_1, removeDuplicates)
     // }
 }
 
-TEST(test_2, fibonacci_1)
-{
+TEST(test_2, fibonacci_1) {
     EXPECT_EQ(0, fibonacci_1(0));
     EXPECT_EQ(1, fibonacci_1(1));
     EXPECT_EQ(1, fibonacci_1(2));
@@ -192,8 +186,7 @@ TEST(test_2, fibonacci_1)
     // }
 }
 
-TEST(test_2, fibonacci_2)
-{
+TEST(test_2, fibonacci_2) {
     EXPECT_EQ(0, fibonacci_2(0));
     EXPECT_EQ(1, fibonacci_2(1));
     EXPECT_EQ(1, fibonacci_2(2));

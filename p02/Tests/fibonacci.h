@@ -6,8 +6,7 @@ unsigned fibonacci_1(unsigned n) {
     if (n == 1)
         return valPrev;
     unsigned val;
-    for (unsigned i = 2; i <= n; i ++)
-    {
+    for (unsigned i = 2; i <= n; i++) {
         val = valPrevPrev + valPrev;
         valPrevPrev = valPrev;
         valPrev = val;
@@ -18,5 +17,5 @@ unsigned fibonacci_1(unsigned n) {
 unsigned fibonacci_2(unsigned n) {
     if (n <= 1)
         return n;
-    return fibonacci_2(n-1) + fibonacci_2(n-2);
+    return fibonacci_2(n - 1) + fibonacci_2(n - 2);
 }

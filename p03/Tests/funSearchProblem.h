@@ -6,13 +6,13 @@
 
 using namespace std;
 
-class FunSearchProblem{
+class FunSearchProblem {
 public:
     FunSearchProblem();
-    static int smallestMissingValue(const vector<int> & values);
-    static int facingSun(const vector<int> & values);
+    static int smallestMissingValue(const vector<int> &values);
+    static int facingSun(const vector<int> &values);
     static int squareR(int num);
-    static int minPages(const vector<int> & values, int numSt);
+    static int minPages(const vector<int> &values, int numSt);
 };
 
 #endif

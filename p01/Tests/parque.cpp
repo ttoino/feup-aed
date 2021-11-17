@@ -4,25 +4,20 @@
 using namespace std;
 
 // a)
-ParqueEstacionamento::ParqueEstacionamento(unsigned lot, unsigned nMaxCli) : lotacao(lot), numMaximoClientes(nMaxCli)
-{
+ParqueEstacionamento::ParqueEstacionamento(unsigned lot, unsigned nMaxCli)
+    : lotacao(lot), numMaximoClientes(nMaxCli) {
     clientes = {};
     vagas = lot;
 }
 
-unsigned ParqueEstacionamento::getNumLugares() const
-{
-    return lotacao;
-}
+unsigned ParqueEstacionamento::getNumLugares() const { return lotacao; }
 
-unsigned ParqueEstacionamento::getNumMaximoClientes() const
-{
+unsigned ParqueEstacionamento::getNumMaximoClientes() const {
     return numMaximoClientes;
 }
 
 // b)
-int ParqueEstacionamento::posicaoCliente(const string &nome) const
-{
+int ParqueEstacionamento::posicaoCliente(const string &nome) const {
     for (int i = 0; i < clientes.size(); i++)
         if (clientes.at(i).nome == nome)
             return i;
@@ -30,8 +25,7 @@ int ParqueEstacionamento::posicaoCliente(const string &nome) const
     return -1;
 }
 
-bool ParqueEstacionamento::adicionaCliente(const string &nome)
-{
+bool ParqueEstacionamento::adicionaCliente(const string &nome) {
     if (clientes.size() >= numMaximoClientes)
         return false;
 
@@ -43,19 +37,15 @@ bool ParqueEstacionamento::adicionaCliente(const string &nome)
 }
 
 // c)
-bool ParqueEstacionamento::entrar(const string &nome)
-{
+bool ParqueEstacionamento::entrar(const string &nome) {
     if (vagas <= 0)
         return false;
 
     for (auto &cliente : clientes)
         if (cliente.nome == nome)
-            if (cliente.presente)
-            {
+            if (cliente.presente) {
                 return false;
-            }
-            else
-            {
+            } else {
                 --vagas;
                 cliente.presente = true;
                 return true;
@@ -65,16 +55,12 @@ bool ParqueEstacionamento::entrar(const string &nome)
 }
 
 // d)
-bool ParqueEstacionamento::retiraCliente(const string &nome)
-{
+bool ParqueEstacionamento::retiraCliente(const string &nome) {
     for (auto cliente = clientes.begin(); cliente < clientes.end(); ++cliente)
         if ((*cliente).nome == nome)
-            if ((*cliente).presente)
-            {
+            if ((*cliente).presente) {
                 return false;
-            }
-            else
-            {
+            } else {
                 clientes.erase(cliente);
                 return true;
             }
@@ -83,11 +69,9 @@ bool ParqueEstacionamento::retiraCliente(const string &nome)
 }
 
 // e)
-bool ParqueEstacionamento::sair(const string &nome)
-{
+bool ParqueEstacionamento::sair(const string &nome) {
     for (auto &cliente : clientes)
-        if (cliente.nome == nome && cliente.presente)
-        {
+        if (cliente.nome == nome && cliente.presente) {
             ++vagas;
             cliente.presente = false;
             return true;
@@ -97,8 +81,7 @@ bool ParqueEstacionamento::sair(const string &nome)
 }
 
 // f)
-unsigned ParqueEstacionamento::getNumLugaresOcupados() const
-{
+unsigned ParqueEstacionamento::getNumLugaresOcupados() const {
     unsigned acc{0};
 
     for (auto &cliente : clientes)
@@ -107,7 +90,6 @@ unsigned ParqueEstacionamento::getNumLugaresOcupados() const
     return acc;
 }
 
-unsigned ParqueEstacionamento::getNumClientesAtuais() const
-{
+unsigned ParqueEstacionamento::getNumClientesAtuais() const {
     return clientes.size();
 }

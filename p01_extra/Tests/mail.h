@@ -4,8 +4,7 @@
 #include <string>
 using namespace std;
 
-class Mail
-{
+class Mail {
     string sender;
     string receiver;
     string zipCode;
@@ -17,8 +16,7 @@ public:
     virtual unsigned int getPrice() const;
 };
 
-class RegularMail : public Mail
-{
+class RegularMail : public Mail {
     unsigned int weight;
 
 public:
@@ -26,8 +24,7 @@ public:
     unsigned int getPrice() const override;
 };
 
-class GreenMail : public Mail
-{
+class GreenMail : public Mail {
     string type; // "envelope", "bag", "box"
 public:
     GreenMail(string send, string rec, string code, string t);
