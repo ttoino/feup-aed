@@ -1,6 +1,6 @@
 # FEUP-AED
 
-Exercises from the AED course unit at FEUP.
+Weekly exercises from the AED course unit at FEUP.
 
 Exercise descriptions not provided. Unit tests provided.
 
@@ -8,6 +8,7 @@ Exercise descriptions not provided. Unit tests provided.
 
 * **Name**: Algoritmos e Estruturas de Dados (Algorithms and Data Structures)
 * **Date**: Year 2, Semester 1, 2021/22
+* **See also**: [feup-aed-mooshak](https://github.com/ttoino/feup-aed-mooshak), [feup-aed-proj1](https://github.com/ttoino/feup-aed-proj1), [feup-aed-proj2](https://github.com/ttoino/feup-aed-proj2)
 * [**More info**](https://sigarra.up.pt/feup/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=484404)
 
 ## Disclaimer
