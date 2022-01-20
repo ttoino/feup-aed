@@ -3,9 +3,9 @@ project(aed2122_p02)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_subdirectory(lib/googletest-master)
-include_directories(lib/googletest-master/googletest/include)
-include_directories(lib/googletest-master/googlemock/include)
+add_subdirectory("../googletest" "./googletest")
+include_directories("../googletest/googletest/include")
+include_directories("../googletest/googlemock/include")
 
 add_executable(aed2122_p02 main.cpp Tests/tests.cpp Tests/my_vector.h)
 
