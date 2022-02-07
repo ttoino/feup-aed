@@ -2,7 +2,8 @@
 
 Weekly exercises from the AED course unit at FEUP.
 
-Exercise descriptions not provided. Unit tests provided.
+Exercise descriptions provided in portuguese (adapted from the given PDFs).\
+Unit tests provided.
 
 ## Unit info
 
