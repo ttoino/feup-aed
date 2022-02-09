@@ -75,44 +75,45 @@ A função deve encontrar a distribuição na qual o número máximo de páginas
 Se não existir uma distribuição válida, a função retorna -1.
 Implemente esta função usando pesquisa binária e usando apenas estruturas de dados lineares.
 
-[^1]: Doxygen gera documentação a partir de código fonte. Passos a seguir (consultar também página
-moodle e [Doxygen](https://www.doxygen.nl/index.html)):
+[^1]:
+    Doxygen gera documentação a partir de código fonte. Passos a seguir (consultar também página
+    moodle e [Doxygen](https://www.doxygen.nl/index.html)):
 
-1. [Instalar](https://www.doxygen.nl/download.html) Doxygen.
+    1. [Instalar](https://www.doxygen.nl/download.html) Doxygen.
 
-2. Incluir no projeto a referência ao Doxygen, colocando essa informação em "*CMakeLists.txt*".
+    1. Incluir no projeto a referência ao Doxygen, colocando essa informação em "*CMakeLists.txt*".
 
-    O texto apresentado a seguir serve como exemplo. Note a indicação (deve alterar para o que pretender) de:
+        O texto apresentado a seguir serve como exemplo. Note a indicação (deve alterar para o que pretender) de:
 
-    - pasta destino da documentação como "CMAKE_SOURCE_DIR}/docs/output"
+        - pasta destino da documentação como "CMAKE_SOURCE_DIR}/docs/output"
 
-    - ficheiro de configuração *Doxyfile* em "CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile"
+        - ficheiro de configuração *Doxyfile* em "CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile"
 
-        ```cmake
-        # Doxygen Build
-        find_package(Doxygen)
-        if(DOXYGEN_FOUND)
-            set(BUILD_DOC_DIR "${CMAKE_SOURCE_DIR}/docs/output")
-            if(NOT EXISTS "${BUILD_DOC_DIR}")
-                file(MAKE_DIRECTORY "${BUILD_DOC_DIR}")
-            endif()
+            ```cmake
+            # Doxygen Build
+            find_package(Doxygen)
+            if(DOXYGEN_FOUND)
+                set(BUILD_DOC_DIR "${CMAKE_SOURCE_DIR}/docs/output")
+                if(NOT EXISTS "${BUILD_DOC_DIR}")
+                    file(MAKE_DIRECTORY "${BUILD_DOC_DIR}")
+                endif()
 
-        set(DOXYGEN_IN "${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile")
-        set(DOXYGEN_OUT "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile")
-        configure_file("${DOXYGEN_IN}" "${DOXYGEN_OUT}" @ONLY)
+            set(DOXYGEN_IN "${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile")
+            set(DOXYGEN_OUT "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile")
+            configure_file("${DOXYGEN_IN}" "${DOXYGEN_OUT}" @ONLY)
 
-        message("Doxygen build started")
-        add_custom_target(Doxygen ALL
-            COMMAND "${DOXYGEN_EXECUTABLE}" "${DOXYGEN_OUT}"
-            WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-            COMMENT "Generating API documentation with Doxygen"
-            VERBATIM)
-        else(DOXYGEN_FOUND)
-            message("Doxygen needs to be installed to generate the documentation.")
-        endif(DOXYGEN_FOUND)
-        ```
+            message("Doxygen build started")
+            add_custom_target(Doxygen ALL
+                COMMAND "${DOXYGEN_EXECUTABLE}" "${DOXYGEN_OUT}"
+                WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+                COMMENT "Generating API documentation with Doxygen"
+                VERBATIM)
+            else(DOXYGEN_FOUND)
+                message("Doxygen needs to be installed to generate the documentation.")
+            endif(DOXYGEN_FOUND)
+            ```
 
-3. Criar o ficheiro de configuração *Doxyfile*, na pasta indicada em "*CMakeLists.txt*".
-Um exemplo deste ficheiro está na página moodle da UC.
+    2. Criar o ficheiro de configuração *Doxyfile*, na pasta indicada em "*CMakeLists.txt*".
+    Um exemplo deste ficheiro está na página moodle da UC.
 
-4. [Documentar](https://www.doxygen.nl/manual/docblocks.html#cppblock) o código fonte C++; lista de comandos pode ser consultada [aqui](https://www.doxygen.nl/manual/commands.html).
+    4. [Documentar](https://www.doxygen.nl/manual/docblocks.html#cppblock) o código fonte C++; lista de comandos pode ser consultada [aqui](https://www.doxygen.nl/manual/commands.html).

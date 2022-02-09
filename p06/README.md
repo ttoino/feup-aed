@@ -102,19 +102,20 @@ Na resolução, pode ser útil a utilização do membro-função privado da BST:
 BinaryNode<Comparable>* find(const Comparable& x, BinaryNode<Comparable>* t) const
 ```
 
-[^1]: Para aceder a ficheiros no seu programa (necessário ler o ficheiro *vets.txt*), pode:
+[^1]:
+    Para aceder a ficheiros no seu programa (necessário ler o ficheiro *vets.txt*), pode:
 
-1. especificar o caminho absoluto, ou
+    1. especificar o caminho absoluto, ou
 
-2. alterar "*Working directory*" no CLion (*Run* → *Edit Configurations...* → *Working directory*) para a pasta onde os ficheiros se encontram, ou
+    2. alterar "*Working directory*" no CLion (*Run* → *Edit Configurations...* → *Working directory*) para a pasta onde os ficheiros se encontram, ou
 
-3. adicionar ao ficheiro *CMakeLists.txt* a diretiva
+    3. adicionar ao ficheiro *CMakeLists.txt* a diretiva
 
-    ```cmake
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Tests")
-    ```
+        ```cmake
+        set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Tests")
+        ```
 
-    neste caso, os ficheiros compilados e a ler/escrever são colocados na pasta *projeto/Tests*
+        neste caso, os ficheiros compilados e a ler/escrever são colocados na pasta *projeto/Tests*
 
 ## 2.
 
