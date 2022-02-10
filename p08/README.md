@@ -234,7 +234,7 @@ void FunWithHashTables::wordIndex(const vector<string> &words,
                                   vector<int>& answer)
 ```
 
-**Complexidade temporal esperada:** O(n) [em média]
+**Complexidade temporal esperada:** O(n) [em média]\
 (onde *n* é a quantidade de palavras em *words*)
 
 Num planeta distante todas as palavras possíveis são constituídas por um máximo de cinco letras minúsculas do alfabeto inglês: {a, b, c, ..., z}.

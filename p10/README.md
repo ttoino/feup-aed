@@ -312,7 +312,7 @@ static int FunWithGraphs::gridCity(const vector<pair<int, int>>& plants,
                                    const vector<pair<int, int>>& houses)
 ```
 
-**Complexidade temporal esperada:** O(n² log n)
+**Complexidade temporal esperada:** O(n² log n)\
 (onde *n* é a soma dos tamanhos dos vetores *plants* e *houses*)
 
 Ficaste responsável pela instalação da rede elétrica da província de Algoritmopólis e queres gastar a menor quantidade de fio possível para estabelecer as ligações a todas as casas.

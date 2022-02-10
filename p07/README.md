@@ -47,7 +47,8 @@ Método a implementar:
 int FunWithBSTs::battle(const vector<int>& alice, const vector<int>& bruno)
 ```
 
-**Complexidade temporal esperada:** O(n log n)\(onde *n* é a soma dos tamanho dos vetores `alice` e `bruno`)
+**Complexidade temporal esperada:** O(n log n)\
+(onde *n* é a soma dos tamanho dos vetores `alice` e `bruno`)
 
 A Alice decidiu agora colecionar cartas de Pokemon e está ansiosa por batalhar contra o Bruno.
 Cada carta de Pokemon é identificada por um inteiro positivo indicando a sua "energia" e inicialmente a Alice e o Bruno dispõe de um baralho.
@@ -131,7 +132,8 @@ Método a implementar:
 int FunWithBSTs::numberMovies(const vector<pair<string, int>>& reviews)
 ```
 
-**Complexidade temporal esperada:** O(n log n)\(onde *n* é o tamanho do vector `reviews`)
+**Complexidade temporal esperada:** O(n log n)\
+(onde *n* é o tamanho do vector `reviews`)
 
 Para começar e para "aquecer os motores" e garantir que percebe como funcionam os pares, tem apenas de contar quantos filmes existem.
 A tua tarefa é por isso devolver um inteiro contendo o número de nomes diferentes de filmes.
@@ -159,7 +161,8 @@ Método a implementar:
 void FunWithBSTs::moreReviews(const vector<pair<string, int>>& reviews, int& m, int& n)
 ```
 
-**Complexidade temporal esperada:** O(n log n)\(onde *n* é o tamanho do vector `reviews`)
+**Complexidade temporal esperada:** O(n log n)\
+(onde *n* é o tamanho do vector `reviews`)
 
 A tua tarefa é devolver em *m* o número máximo de reviews feitas a um só filme e em *n* o número de filmes que têm *m* reviews.
 
@@ -300,7 +303,8 @@ Método a implementar:
 bool BST<Comparable>::isAVL() const
 ```
 
-**Complexidade temporal esperada:** O(n²) *[bónus: é possível fazer em O(n), consegue ver como?]*\
+**Complexidade temporal esperada:** O(n²)\
+*[bónus: é possível fazer em O(n), consegue ver como?]*\
 (onde *n* é o tamanho da árvore)
 
 A tua tarefa é devolver *true* se a BST for uma árvore AVL ou *false* caso contrário.
