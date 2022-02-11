@@ -577,11 +577,35 @@ template <class Comparable> bool BST<Comparable>::isAVL() const {
 template <class Comparable>
 void BST<Comparable>::rightRotate(const Comparable &x) {
     // O(h)
-    BinaryNode<Comparable> *node{find(x, root)};
+    BinaryNode<Comparable> *parent{root}, *q{nullptr}, *p{nullptr};
 
-    BinaryNode<Comparable> *p{node->left};
-    node->left = p->right;
-    p->left = node;
+    if (parent->element == x) {
+        q = parent;
+        parent = nullptr;
+    } else {
+        while (parent && !(parent->left && parent->left->element == x) &&
+               !(parent->right && parent->right->element == x))
+            parent = parent->element < x ? parent->right : parent->left;
+
+        if (!parent)
+            return;
+
+        q = parent->element < x ? parent->right : parent->left;
+    }
+
+    if (!(p = q->left))
+        return;
+
+    if (parent)
+        if (parent->element < x)
+            parent->right = p;
+        else
+            parent->left = p;
+    else
+        root = p;
+
+    q->left = p->right;
+    p->right = q;
 }
 
 #endif
