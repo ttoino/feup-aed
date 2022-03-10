@@ -5,6 +5,18 @@ Weekly exercises from the AED course unit at FEUP.
 Exercise descriptions provided in portuguese (adapted from the given PDFs).\
 Unit tests provided.
 
+## Building and Running
+
+This project uses [cmake](https://cmake.org/) and [googletest](https://github.com/google/googletest).
+
+Assuming cmake is installed and properly setup:
+
+1. Run `git submodule init && git submodule update` to download googletest.
+2. Run `cmake -S . -B build` in this project's directory to generate the build system.
+3. Run `cmake --build build` to actually build the project.
+
+This will generate a bunch of binaries in the `build` directory. One for each directory with the name format `TP*`. Simply run one of these executables.
+
 ## Unit info
 
 * **Name**: Algoritmos e Estruturas de Dados (Algorithms and Data Structures)
